@@ -32,11 +32,14 @@ export class UpdateAwesomeComponent implements OnInit, OnDestroy {
     this.loadData();
   }
   loadData() {
-    this.subscriptionParams = this.activateRouteService.params.subscribe(data  => {
+    this.subscriptionParams = this.activateRouteService.params.subscribe(data => {
       const i = data.id;
-      this.subscription = this.awesomeService.getAwesome(i).subscribe((awesome: Awesome) => {
-        this.awesome = awesome;
-      });
+      this.getAwesome(i);
+    });
+  }
+  getAwesome(id) {
+     this.subscription = this.awesomeService.getAwesome(id).subscribe((awesome: Awesome) => {
+      this.awesome = awesome;
     });
   }
   onEditAwesome() {
