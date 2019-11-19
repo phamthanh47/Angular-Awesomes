@@ -1,0 +1,26 @@
+
+<div *ngIf="isSuccess" class="alert alert-success" role="alert">
+  Đã sửa sách thành công!
+</div>
+
+<form action="" method="POST" role="form">
+  <legend>Edit Awesome </legend>
+  <div class="form-group">
+    <label for="1">Url</label>
+    <input type="text" class="form-control" id="1"
+           [(ngModel)]="awesome.url" [ngModelOptions]="{standalone: true}">
+  </div>
+  <div class="form-group">
+    <label for="2">Tag</label>
+    <textarea class="form-control"  id="2"
+              rows="3" [(ngModel)]="awesome.tag" [ngModelOptions]="{standalone: true}"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="3">Description</label>
+    <textarea class="form-control" rows="5" id="3"
+              [(ngModel)]="awesome.descriptions" [ngModelOptions]="{standalone: true}"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="onEditAwesome()">SAVE</button>
+
+</form>
+

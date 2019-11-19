@@ -1,0 +1,33 @@
+<a routerLink="/create-awesome">Create awesome  </a>
+
+<div class = "panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">List Awesome </h3>
+  </div>
+  <table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Url</th>
+      <th>Tag</th>
+      <th>Description</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor = "let awesome of awesomelist ; let i = index ">
+      <td routerLink='/awesomes/{{i+1}}'>{{i+1}}</td>
+      <td>{{awesome.url}}</td>
+      <td>{{awesome.tag}}</td>
+      <td>{{awesome.descriptions}}</td>
+      <td>
+        <button type="button" class="btn btn-info" routerLink="/update-awesome/{{awesome.id}}">Update </button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-warning" (click)="onDeleteCourse(awesome.id)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
